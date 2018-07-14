@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Talk About Depression</title>
+	<meta name="author" content="Richie Ramrati" />
+	<meta name="description" content=" " />
+	<meta name="keywords"  content=" " />
+	<meta name="Resource-type" content="Document" />
+	<link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<style>
+
+
+	body{
+		color: #333;
+		font-family: 'Lato', sans-serif;
+
+	}
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h2{
+		font-size: 5em;
+		margin: 0 0 50px 0;
+		font-family: lato,helvetica;
+	}
+
+	h3{
+		font-size: 3em;
+		margin: 48px 0px 20px 0;
+		font-family: lato,helvetica;
+	}
+
+
+	/* Common styles
+	* --------------------------------------- */
+	img{
+	    -webkit-transition: all 0.7s ease-out;
+		-moz-transition: all 0.7s ease-out;
+		-o-transition: all 0.7s ease-out;
+		transition: all 0.7s ease-out;
+	}
+	.section{
+		text-align:center;
+		overflow:hidden;
+	}
+	.wrap{
+		width: 1500px;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	.box{
+		text-align: left;
+		color: #808080;
+		font-size: 1.2em;
+		line-height: 1.6em;
+	}
+
+
+	/* Section 1
+	* --------------------------------------- */
+	#section1 {
+	background-image: url("imgs/tadsec1.png");
+	   /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	}
+
+	#section1 .box{
+		position: absolute;
+		top: 20%;
+		left: 45%;
+		width: 500px;
+		z-index: 1;
+	}
+	#section1 .imgsContainer{
+		display: block;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+
+	/* Section 2
+	* --------------------------------------- */
+	#section2 img{
+		position:absolute;
+	}
+
+	#section2 .imgsContainer,
+	#staticImg .imgsContainer,
+	#section3 .imgsContainer{
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		display: block;
+		margin-top: -288px;
+		margin-left: -636px;
+		width: 0;
+		height: 0;
+
+		-webkit-transition: all 1.2s ease-in-out;
+		-moz-transition: all 1.2s ease-in-out;
+		-o-transition: all 1.2s ease-in-out;
+		transition: all 1.2s ease-in-out;
+	}
+
+	#section2.moveUp .imgsContainer{
+		top: 50%;
+	}
+
+	#section2.moveDown .imgsContainer,
+	#staticImg .imgsContainer{
+		top: 90%;
+	}
+
+	#section2.active .imgsContainer{
+		top: 50%;
+	}
+
+	#section2 .box{
+		color: #fff;
+		top: 13%;
+		left: 46%;
+		position: absolute;
+		width: 518px;
+	}
+
+	#iphone-yellow{
+		top: 10px;
+		left: -170px;
+	}
+
+	#iphone-red{
+		top: -120px;
+		left: 160px;
+	}
+
+
+	#staticImg{
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 200%;
+		left: 0;
+		width: 100%;
+		min-width: 980px;
+		height: 100%;
+		-webkit-transition: all 0.7s ease-out;
+		-moz-transition: all 0.7s ease-out;
+		-o-transition: all 0.7s ease-out;
+		transition: all 0.7s ease-out;
+
+		-webkit-backface-visibility: hidden;
+		-webkit-perspective: 1000;
+	}
+	#staticImg.moveDown{
+	-webkit-transform: translate3d(0, 100%, 0);
+      -ms-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+	}
+	#staticImg.moveUp{
+
+	-webkit-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+	}
+	#staticImg.moveDown .imgsContainer{
+			top: 50%;
+	}
+	#staticImg.moveDown img{
+		top: 155px;
+	}
+
+	#staticImg.active .imgsContainer{
+		top: 50%;
+	}
+
+
+	#staticImg.active img{
+		top: 487px;
+	}
+
+	/* Section 3
+	* --------------------------------------- */
+	#section3 .imgsContainer{
+		top: 44%;
+		left: 85%;
+	}
+
+	#section3 img{
+		position: absolute;
+	}
+
+	#section3 .box{
+		top: 9%;
+		left: 4%;
+		position: absolute;
+		width: 550px;
+	}
+
+	h4{
+		font-size: 2em;
+		font-family: lato,helvetica;
+		margin:0;
+		padding:0;
+	}
+
+	/* Section 4
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: lato,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section4 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 38%;
+		top: 1%;
+
+		/* 
+		* Preventing flicker on some browsers 
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section5{
+		overflow: hidden;
+	}
+
+	#myVideo2{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				'verticalCentered': false,
+				'css3': true,
+				'sectionsColor': ['#fff', '#62c2e0', '#fff','#fff','#fff'],
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['Overview', 'Services', 'Progress', 'Preview', 'Pitch'],
+
+				'onLeave': function(index, nextIndex, direction){
+					if (index == 3 && direction == 'down'){
+						$('.section').eq(index -1).removeClass('moveDown').addClass('moveUp');
+					}
+					else if(index == 3 && direction == 'up'){
+						$('.section').eq(index -1).removeClass('moveUp').addClass('moveDown');
+					}
+
+					$('#staticImg').toggleClass('active', (index == 2 && direction == 'down' ) || (index == 4 && direction == 'up'));
+					$('#staticImg').toggleClass('moveDown', nextIndex == 4);
+					$('#staticImg').toggleClass('moveUp', index == 4 && direction == 'up');
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+
+
+<div id="fullpage">
+	<div class="section" id="section1">
+		<div class="wrap">
+			<div class="box">
+				<h2>Support.</h2> 
+				<h2>Educate.</h2>
+				<h2>Save.</h2>
+				 <strong>Non Profit Building a Platform to Combat Depression.</strong> </br> 
+				 Mission: Transform the way we communicate with friends about mental health to save lives, decrease social stigma, and give unconditional support to those who need it most.
+			</div>
+		</div>
+	</div>
+
+	<div class="section moveDown" id="section2">
+		<div class="wrap">
+			<div class="imgsContainer">
+				<img src="imgs/iphone-yellow.png" alt="iphone" id="iphone-yellow" />
+				<img src="imgs/iphone-yellow.png" alt="iphone" id="iphone-red" />
+			</div>
+			<div class="box">
+				<h3>Peer to Peer</h3> 
+				<strong>Find licensed professionals</strong> and support near you. Research shows individuals that demonstrate significant recovery after spending time with social support systems.
+				<h3>Accessible Protocols</h3> 
+				<strong>Prevention Peer Protocols</strong> provide decision making strategies to assist individuals in emergency and non-emergency cases.
+				<h3>Empathy Strategies</h3> 
+				<strong>Effective communication channels</strong> transform the way the world communicates about mental health. Equip yourself with the tools to be the daily support those around you need.
+			</div>
+		</div>
+	</div>
+	<div class="section moveDown" id="section3">
+		<div class="wrap">
+			<div class="imgsContainer">
+				<img src="imgs/advisor.png" alt="advisor" id="advisor"/>
+			</div>
+				<div class="box">
+					<h4><strong>Advisor</strong> Dr. Kathy Platoni</h4>
+					<br>
+					A nationally renowned expert in the treatment of PTSD for our veterans who has served for more than 3 decades as a clinical psychologist and served as a U.S Army Officer, retiring as a full Colonel after 4 wartime deployments. Dr. Platoni has developed combat stress control, debriefing, and crisis management programs used throughout the U.S. Army.
+					<br>
+					<br>
+					<br>
+					<h4> <strong>CEO</strong> Benjamin Greiner</h4>
+					<br>
+					Greiner is the CEO and founder of the non-profit organization <strong> The Mental Health Communication Project Co.</strong>, a company that is changing the way we communicate about mental health. With the companies first website, Greiner led TalkAboutDepression to become a<strong> finalist for the 2018 Stu Lieblein ‘90 Pitch Contest. </strong>
+					<br>
+					For any inquires on how your organization can provide support contact <strong>
+					bengreiner@talkaboutdepression.org </strong>
+				</div>
+		</div>
+	</div>
+	<div class="section moveDown" id="section4">
+		<video id="myVideo" loop muted data-autoplay="1">
+			<source src="imgs/tadpreview.mp4" type="video/mp4">
+		</video>
+		<div class="layer">
+			<h1>Preview</h1>
+		</div>
+	</div>
+	<div class="section moveDown2" id="section5">
+		<video id="myVideo2" controls = "true" autoplay="2">
+			<source src="imgs/tadpitch.mp4" type="video/mp4">
+		</video>
+	</div>
+
+</div>
+
+</body>
+</html>
